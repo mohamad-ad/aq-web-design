@@ -8,6 +8,7 @@ import generatorIcon from './imgs/generator.png';
 import maintenanceIcon from './imgs/maintenance.png';
 import nocIcon from './imgs/noc.png';
 import paymentIcon from './imgs/payment.png';
+import serviceIcon from './imgs/service.png';
 
 
 
@@ -17,18 +18,23 @@ const quickPayItems=[
   {icon:maintenanceIcon , text: "Maintenance"},
   {icon:connectionIcon , text: "Connection Fees"},
   {icon:generatorIcon , text: "Generator Bill"},
-  {icon:nocIcon , text: "NOC Fee"}
+  {icon:billIcon , text: "NOC Fee"}
 ]
-const serviceRequestItems=[
-  {icon:coolingIcon , text: "Cooling"},
-  {icon:maintenanceIcon , text: "Maintenance"}
-
+const salesServicesItems=[
+  {icon:nocIcon , text: "Initial NOC Request"},
+  {icon:nocIcon , text: "Final NOC Request"},
+  {icon:nocIcon , text: "Sales Transfer NOC"}
+  
+]
+const leaingServicesItems=[
+  {icon:maintenanceIcon , text: "Maintenance Request"}
+  
 ]
 function App() {
   return (
       <div className='card-container'>
         <Card cardIcon={paymentIcon} cardTitle={"Quick Pay"} cardItems={quickPayItems}/>
-        <Card cardIcon={billIcon} cardTitle={"Service Request"} cardItems={serviceRequestItems}/>
+        <Card cardIcon={serviceIcon} cardTitle={"Service Request"} cardItems={salesServicesItems} cardItemsTwo={leaingServicesItems} sectionOneLabel={"Sales services"} sectionTwoLabel={"Leasing services"}/>
         
       </div>
 
