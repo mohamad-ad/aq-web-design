@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Card from './components/Card';
+import billIcon from './imgs/bill.png';
+import connectionIcon from './imgs/connection.png';
+import coolingIcon from './imgs/cooling.png';
+import generatorIcon from './imgs/generator.png';
+import maintenanceIcon from './imgs/maintenance.png';
+import nocIcon from './imgs/noc.png';
+import paymentIcon from './imgs/payment.png';
+
+
+
+
+const quickPayItems=[
+  {icon:coolingIcon , text: "Cooling"},
+  {icon:maintenanceIcon , text: "Maintenance"},
+  {icon:connectionIcon , text: "Connection Fees"},
+  {icon:generatorIcon , text: "Generator Bill"},
+  {icon:nocIcon , text: "NOC Fee"}
+]
+const serviceRequestItems=[
+  {icon:coolingIcon , text: "Cooling"},
+  {icon:maintenanceIcon , text: "Maintenance"}
+
+]
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className='card-container'>
+        <Card cardIcon={paymentIcon} cardTitle={"Quick Pay"} cardItems={quickPayItems}/>
+        <Card cardIcon={billIcon} cardTitle={"Service Request"} cardItems={serviceRequestItems}/>
+        
+      </div>
+
   );
 }
 
